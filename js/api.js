@@ -74,6 +74,7 @@ export async function postTareas(tarea) {
     throw error;
   }
 }
+
 //DELETE
 export async function deleteTarea(id) {
   try {
@@ -142,8 +143,10 @@ export async function getTareaById(id) {
     } else {
       console.log("Error al intentar encontrar la tarea");
     }
+    throw error;
   }
 }
+
 //PUT
 export async function putTarea(id, tarea) {
   try {
