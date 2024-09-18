@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Tareas</title>
+  </head>
+  <body>
+    <main>
+      <h1>Gestión de Tareas</h1>
+      <form id="formulario">
+        <fieldset>
+          <legend>Agregar nueva tarea</legend>
+          <label for="tarea">Tarea</label>
+          <input
+            type="text"
+            id="tarea"
+            name="tarea"
+            placeholder="Escribe una tarea"
+            required
+          />
+          <button type="submit" id="btn">Agregar</button>
+        </fieldset>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Id Tarea</th>
+            <th>Tarea</th>
+          </tr>
+        </thead>
+        <tbody id="listaTareas"></tbody>
+      </table>
+    </main>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
