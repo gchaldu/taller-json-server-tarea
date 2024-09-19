@@ -52,7 +52,6 @@ function filaTarea(tarea) {
 }
 
 //POST
-
 const input = document.getElementById("tarea");
 const formulario = document.getElementById("formulario");
 
@@ -71,4 +70,3 @@ async function addTarea() {
     handleError(error, "Hubo un problema al crear la tarea");
   }
 }
-//UPDATE

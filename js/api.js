@@ -21,6 +21,26 @@ export async function getTareas() {
   }
 }
 
+export function getTareasPromise() {
+  return fetch(urlBase)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("HTTP error");
+      }
+
+      return response.json();
+    })
+    .then((json) => console.log(json))
+    .catch((error) => {
+      if (error instanceof TypeError) {
+        console.error("Error de red!!!");
+      } else {
+        console.error("Error al obtener las tareas");
+      }
+      throw error;
+    });
+}
+
 export async function getTareas2() {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 5000); // Timeout de 5 segundos
