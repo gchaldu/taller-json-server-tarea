@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     tableTareas(lista);
   } catch (error) {
     handleError(
+      error,
       "Hubo un problema al cargar las tareas. Por favor, inténtelo de nuevo más tarde."
     );
   }
@@ -16,7 +17,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 function handleError(error, message) {
   console.error("Error al cargar las tareas:", error);
-  // Aquí podrías mostrar un mensaje al usuario, por ejemplo:
   alert(message);
 }
 function tableTareas(tareas) {
