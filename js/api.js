@@ -74,12 +74,17 @@ export async function getTareas2() {
 //POST
 
 export async function postTareas(tarea) {
+  let misCabeceras = new Headers();
+  misCabeceras.append("Content-Type", "application/json");
+
+  let miInicializador = {
+    method: "POST",
+    headers: misCabeceras,
+    body: JSON.stringify(tarea),
+  };
+
   try {
-    const response = await fetch(urlBase, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(tarea),
-    });
+    const response = await fetch(urlBase, miInicializador);
     if (!response.ok) {
       throw new Error("HTTP request error: " + response.status);
     }
